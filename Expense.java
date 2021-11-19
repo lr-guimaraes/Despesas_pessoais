@@ -1,57 +1,57 @@
 import java.time.LocalDate;
 
-public class Despesa {
+public class Expense {
 
-	private float valor;
-	private LocalDate data;
-	private String descricao;
+	private float value;
+	private LocalDate date;
+	private String description;
 	// outros atributos como:
 	//     - categoria (enum com saude, lazer, transporte, educacao etc)
 	//     - local da despesa
 	// depositos, ou seja, controlar fluxo de entrada/saida
 	// etc e tal...
 
-	public Despesa(float valor, String descricao) {
+	public Expense(float value, String descricao) {
 		super();
-		this.valor = valor;
-		this.descricao = descricao;
-		this.data = LocalDate.now();
+		this.value = value;
+		this.description = descricao;
+		this.date = LocalDate.now();
 	}
 	
-	public float getValor() {
-		return valor;
+	public float getValue() {
+		return value;
 	}
 
-	public void setValor(float valor) {
-		this.valor = valor;
+	public void setValue(float value) {
+		this.value = value;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public LocalDate getDate() {
+		return date;
 	}
 
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public String getDataBr() {
-		return data.getDayOfMonth() + "."
-		       + data.getMonthValue() + "."
-		       + data.getYear();
+	public String getDateBr() {
+		return date.getDayOfMonth() + "."
+		       + date.getMonthValue() + "."
+		       + date.getYear();
 	}
 	
 	// redefine/sobrescreve o toString default que herdamos da object
 	@Override
 	public String toString() {
-		return this.getDataBr() + ": R$ " + valor + " (" + descricao + ")";
+		return this.getDateBr() + ": R$ " + value + " (" + description + ")";
 	}
 		
 }

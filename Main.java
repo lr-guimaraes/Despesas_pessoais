@@ -5,61 +5,61 @@ import java.util.Scanner;
 public class Main {
 	
 	// variavel de classe
-	private static ArrayList<Despesa> despesas = new ArrayList<Despesa>();
-	private static Scanner teclado = new Scanner(System.in);
+	private static ArrayList<Expense> expenses = new ArrayList<Expense>();
+	private static Scanner keyboard = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		int opcao;
+		int option;
 		
-		// incluindo 2 despesas iniciais de teste
-		Despesa d1 = new Despesa(12.5F, "Café Latte");
-		despesas.add(d1);
-		despesas.add(new Despesa(27.95F, "Almoço no Familia Farinha"));
+		// incluindo 2 Expenses iniciais de teste
+		Expense d1 = new Expense(12.5F, "Cafï¿½ Latte");
+		expenses.add(d1);
+		expenses.add(new Expense(27.95F, "Almoï¿½o no Familia Farinha"));
 		
 		do {
 			System.out.println("\n:: Menu");
 			System.out.println("   0 - sair");
-			System.out.println("   1 - cadastrar despesa");
+			System.out.println("   1 - cadastrar despesas");
 			System.out.println("   2 - listar despesas" );
 			
-			System.out.print("\n   Opção? ");
-			opcao = teclado.nextInt();
-			teclado.nextLine(); // consumir o enter do buffer de teclado
+			System.out.print("\n   OpÃ§Ã£o? ");
+			option = keyboard.nextInt();
+			keyboard.nextLine(); // consumir o enter do buffer de teclado
 			
-			switch (opcao) {
+			switch (option) {
 			case 0:
 				System.out.println("\n   Obrigado por usar o sistema!");
 				break;
 			case 1:
-				cadastraDespesas();
+				expensesRegistration();
 				break;
 			case 2:
-				listaDespesas();	
+				expensesList();	
 				break;					
 			default:
-				System.out.println("\n   Opção inexistente!");
+				System.out.println("\n   OpÃ§Ã£o inexistente!");
 				break;
 			}
 			
-		} while (opcao != 0);
+		} while (option != 0);
 	}
 	
 	
-	private static void listaDespesas() {
+	private static void expensesList() {
 		float total = 0;
-		System.out.println("\n:: Minhas despesas \n");
-		for (Despesa despesa : despesas) {
-			System.out.println("   " + despesa);
-			total = total + despesa.getValor();
+		System.out.println("\n:: Minhas Expenses \n");
+		for (Expense Expense : expenses) {
+			System.out.println("   " + Expense);
+			total = total + Expense.getValue();
 		}
 		System.out.println("\n   " + "Valor total: " + total);
 	}
 	
-	private static void cadastraDespesas() {
-		System.out.println("\n:: Nova despesa\n");	
-		// ler a descrição e o valor
-		// fazer um new Despesa
-		// adicionar despesa no despesas
+	private static void expensesRegistration() {
+		System.out.println("\n:: Nova Expense\n");	
+		// ler a descriï¿½ï¿½o e o valor
+		// fazer um new Expense
+		// adicionar Expense no Expenses
 	}
 	
 }
