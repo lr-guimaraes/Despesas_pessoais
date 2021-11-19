@@ -59,21 +59,15 @@ public class Main {
 	private static void expensesRegistration() {
 		float value;
 		String description;
-		System.out.println("\n:: Nova Despesa\n");	
-		// ler a descrição e o valor
 		
+		System.out.println("\n:: Nova Despesa\n");	
 		try{
 			Scanner keyboard = new Scanner(System.in);
 			System.out.println("Valor da despesa: ");
 			value = keyboard.nextFloat();
 			System.out.println("Descrissão da despesa: ");
 			description = keyboard.next(); 
-					// fazer um new Expense
 			Expense ex = new Expense(value, description);
-			//test
-			System.out.println("Valor " + value);
-			System.out.println("Descrição " + description);
-			// adicionar despesas no Desdesas
 			expenses.add(ex);
 		}catch(InputMismatchException e){
 			System.out.println("\n O valor do produto deve estar no formato numeral");		
