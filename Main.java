@@ -76,7 +76,7 @@ public class Main {
 			// adicionar despesas no Desdesas
 			expenses.add(ex);
 		}catch(InputMismatchException e){
-			System.out.println("O valor do produto deve estar no formato numeral");		
+			System.out.println("\n O valor do produto deve estar no formato numeral");		
 		}
 
 	}
