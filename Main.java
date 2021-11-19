@@ -12,9 +12,9 @@ public class Main {
 		int option;
 		
 		// incluindo 2 Expenses iniciais de teste
-		Expense d1 = new Expense(12.5F, "Caf� Latte");
+		Expense d1 = new Expense(12.5F, "Café Latte");
 		expenses.add(d1);
-		expenses.add(new Expense(27.95F, "Almo�o no Familia Farinha"));
+		expenses.add(new Expense(27.95F, "Almoço no Familia Farinha"));
 		
 		do {
 			System.out.println("\n:: Menu");
@@ -22,7 +22,7 @@ public class Main {
 			System.out.println("   1 - cadastrar despesas");
 			System.out.println("   2 - listar despesas" );
 			
-			System.out.print("\n   Opção? ");
+			System.out.println("\n   Opção? ");
 			option = keyboard.nextInt();
 			keyboard.nextLine(); // consumir o enter do buffer de teclado
 			
@@ -56,10 +56,23 @@ public class Main {
 	}
 	
 	private static void expensesRegistration() {
+		float value;
+		String description;
 		System.out.println("\n:: Nova Expense\n");	
-		// ler a descri��o e o valor
+		// ler a descrição e o valor
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Valor da despesa: ");
+		value = keyboard.nextFloat();
+		System.out.println("Descrissão da despesa: ");
+		description = keyboard.next(); 
+
 		// fazer um new Expense
-		// adicionar Expense no Expenses
+		Expense ex = new Expense(value, description);
+		//test
+		System.out.println("Valor " + value);
+		System.out.println("Description " + description);
+		// adicionar despesas no Desdesas
+		expenses.add(ex);
 	}
 	
 }
