@@ -45,3 +45,23 @@
 
     Obrigado por usar o sistema!     
 ### Input invalid
+    :: Menu
+    0 - sair
+    1 - cadastrar despesas
+    2 - listar despesas
+
+    Opção?
+    1
+
+    :: Nova Despesa
+
+    Valor da despesa:
+    test
+    O valor do produto deve estar no formato numeral
+
+    :: Menu
+    0 - sair
+    1 - cadastrar despesas
+    2 - listar despesas
+
+    Opção?
