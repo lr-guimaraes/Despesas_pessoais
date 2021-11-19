@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Main {
 	
@@ -47,7 +48,7 @@ public class Main {
 	
 	private static void expensesList() {
 		float total = 0;
-		System.out.println("\n:: Minhas Expenses \n");
+		System.out.println("\n:: Minhas Despesas \n");
 		for (Expense Expense : expenses) {
 			System.out.println("   " + Expense);
 			total = total + Expense.getValue();
@@ -58,21 +59,26 @@ public class Main {
 	private static void expensesRegistration() {
 		float value;
 		String description;
-		System.out.println("\n:: Nova Expense\n");	
+		System.out.println("\n:: Nova Despesa\n");	
 		// ler a descrição e o valor
-		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Valor da despesa: ");
-		value = keyboard.nextFloat();
-		System.out.println("Descrissão da despesa: ");
-		description = keyboard.next(); 
+		
+		try{
+			Scanner keyboard = new Scanner(System.in);
+			System.out.println("Valor da despesa: ");
+			value = keyboard.nextFloat();
+			System.out.println("Descrissão da despesa: ");
+			description = keyboard.next(); 
+					// fazer um new Expense
+			Expense ex = new Expense(value, description);
+			//test
+			System.out.println("Valor " + value);
+			System.out.println("Descrição " + description);
+			// adicionar despesas no Desdesas
+			expenses.add(ex);
+		}catch(InputMismatchException e){
+			System.out.println("O valor do produto deve estar no formato numeral");		
+		}
 
-		// fazer um new Expense
-		Expense ex = new Expense(value, description);
-		//test
-		System.out.println("Valor " + value);
-		System.out.println("Description " + description);
-		// adicionar despesas no Desdesas
-		expenses.add(ex);
 	}
 	
 }
